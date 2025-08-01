@@ -53,3 +53,4 @@ If test fails while running in headmode (-Dheadless = false), re-run the command
 .Test App manually on http://localhost:3000
 
 [![Watch the demo](docs/preview.png)](docs/todo-app-test.webm)
+(download the preview)
