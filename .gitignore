@@ -1,0 +1,49 @@
+# Include directory-specific gitignores
+# See individual directories for specific ignores:
+# - todo-api/.gitignore
+# - todo-web/.gitignore  
+# - todo-api-test/.gitignore
+# - todo-ui-test/.gitignore
+# - scripts/.gitignore
+
+# Global ignores
+*.log
+*.tmp
+*.temp
+
+scripts/
+scripts/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+target/
+build/
+dist/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test reports
+surefire-reports/
+failsafe-reports/
+coverage/
+
+# Runtime
+pids/
+logs/
+*.pid

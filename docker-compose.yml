@@ -1,0 +1,21 @@
+services:
+  todo-api:
+    build: 
+      context: ./todo-api
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+
+  todo-web:
+    build:
+      context: ./todo-web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - BROWSER=none
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - todo-api

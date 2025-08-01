@@ -1,0 +1,43 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+    
+    - name: Start applications with Docker
+      run: |
+        docker-compose up --build -d
+        
+    - name: Run API tests
+      run: cd todo-api-test && mvn clean test -B
+    
+    - name: Run Selenium tests
+      run: cd todo-ui-test && mvn clean test -B -Dheadless -Dbrowser=chrome
+    
+    - name: Stop applications
+      if: always()
+      run: docker-compose down --remove-orphans
+    
+    - name: Upload test reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-reports
+        path: |
+          todo-api-test/target/surefire-reports/
+          todo-ui-test/target/surefire-reports/
