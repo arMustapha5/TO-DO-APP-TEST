@@ -46,4 +46,10 @@ docker-compose down
 
 ---
 
-For detailed test strategy, see [test_strategy.md](test_strategy.md)
+For detailed test strategy, see [test_plan.md](test_plan.md)
+
+*NOTE*
+If test fails while running in headmode (-Dheadless = false), re-run the command ``` docker compose up ```
+.Test App manually on http://localhost:3000
+
+[![Watch the demo](docs/preview.png)](docs/todo-app-test.webm)

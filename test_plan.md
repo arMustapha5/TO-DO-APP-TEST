@@ -69,8 +69,6 @@ This test plan outlines the automated testing strategy for the Todo Application,
 ### Prerequisites
 ```bash
 # Required software
-- Java 11 or higher
-- Maven 3.6+
 - Docker & Docker Compose
 - Chrome browser (for UI tests)
 ```
