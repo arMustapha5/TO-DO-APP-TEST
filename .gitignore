@@ -10,7 +10,7 @@
 *.log
 *.tmp
 *.temp
-
+.idea
 scripts/
 scripts/*
 

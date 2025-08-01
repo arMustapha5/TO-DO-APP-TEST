@@ -21,7 +21,7 @@ jobs:
     
     - name: Start applications with Docker
       run: |
-        docker-compose up --build -d
+        docker compose up --build -d
         
     - name: Run API tests
       run: cd todo-api-test && mvn clean test -B
@@ -31,7 +31,7 @@ jobs:
     
     - name: Stop applications
       if: always()
-      run: docker-compose down --remove-orphans
+      run: docker compose down --remove-orphans
     
     - name: Upload test reports
       uses: actions/upload-artifact@v4
