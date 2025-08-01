@@ -15,13 +15,13 @@ docker-compose up -d
 ### 2. Run API Tests
 ```bash
 cd todo-api-test
-./mvnw test
+./mvnw clean test
 ```
 
 ### 3. Run Selenium Tests
 ```bash
 cd todo-ui-test
-./mvnw test
+./mvnw clean test
 ```
 
 Add `-Dheadless` flag to run in head mode:
